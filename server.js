@@ -14,6 +14,7 @@ io = module.exports = require("socket.io")(server, {
 require("./socket/socket").__init__();
 
 const db = require("./models");
+console.log(db.url);
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,

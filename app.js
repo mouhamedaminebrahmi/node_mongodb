@@ -4,7 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const indexRouter = require("./routes/index");
 
-const { graphqlHTTP } = require("express-graphql");
+// const { graphqlHTTP } = require("express-graphql");
 const schema = require("./src/api/v2/shema/index");
 var cookieParser = require("cookie-parser");
 
@@ -27,15 +27,15 @@ app.use("/uploads", express.static(__dirname + "/uploads/"));
 //build Front-end
 //app.use(express.static(path.join(__dirname, ".", "front/build")));
 app.use(express.static("public"));
-app.use(
-  "/graphql",
-  bodyParser.json(),
-  graphqlHTTP({
-    schema: schema,
-    rootValue: global,
-    graphiql: true,
-  })
-);
+// app.use(
+//   "/graphql",
+//   bodyParser.json(),
+//   graphqlHTTP({
+//     schema: schema,
+//     rootValue: global,
+//     graphiql: true,
+//   })
+// );
 app.use("/api/v1", indexRouter);
 // app.use((req, res) => {
 //   res.sendFile(path.join(__dirname, ".", "/front/build", "index.html"));
