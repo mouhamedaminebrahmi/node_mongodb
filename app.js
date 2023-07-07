@@ -36,6 +36,9 @@ app.use(express.static("public"));
 //     graphiql: true,
 //   })
 // );
+app.get("/", (req, res) => {
+  res.send("hello express test 1");
+});
 app.use("/api/v1", indexRouter);
 // app.use((req, res) => {
 //   res.sendFile(path.join(__dirname, ".", "/front/build", "index.html"));
