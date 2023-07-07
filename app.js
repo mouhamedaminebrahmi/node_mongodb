@@ -36,7 +36,7 @@ app.use(express.static("public"));
 //     graphiql: true,
 //   })
 // );
-app.get("/", (req, res) => {
+app.get("/mongo", (req, res) => {
   res.send("hello express test 1");
 });
 app.use("/api/v1", indexRouter);
