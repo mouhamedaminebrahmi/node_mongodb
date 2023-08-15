@@ -30,11 +30,9 @@ exports.register = (req, res) => {
 
 exports.login = (req, res) => {
   const { email, password } = req.body;
-
   ShemaDb.findOne({ email })
     .then((data) => {
       const result = compareSync(password, data.password);
-
       if (result) {
         const jwt = sign({ data }, "qwe1234");
         data.password = undefined;
