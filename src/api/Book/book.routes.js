@@ -4,21 +4,21 @@ module.exports = (app) => {
   var router = require("express").Router();
 
   // Create a new dbShema
-  router.post("/books", dbShema.create);
+  router.post("/", dbShema.create);
 
   // Retrieve all dbShema
-  router.get("/books", dbShema.findAll);
+  router.get("/", dbShema.findAll);
 
   // Retrieve a single dbShema with id
-  router.get("/books/:id", dbShema.findOne);
+  router.get("/:id", dbShema.findOne);
 
-  router.get("/books/:id", dbShema.findByUserId);
+  router.get("/users/:id", dbShema.findByUserId);
 
   // Update a dbShema with id
-  router.put("/books/:id", dbShema.update);
+  router.put("/:id", dbShema.update);
 
   // Delete a dbShema with id
-  router.delete("/users/:id", dbShema.delete);
+  router.delete("/:id", dbShema.delete);
 
   app.use("/books", router);
 };

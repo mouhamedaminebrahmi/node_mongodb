@@ -4,7 +4,6 @@ const { getDataFromRedis, setDataInRedis } = require("../../../config/redis.conf
 
 // Create and Save a new ShemaDb
 exports.create = (req, res) => {
-  console.log("mm");
   // Create a ShemaDb
   const object = new ShemaDb(req.body);
   // Save ShemaDb in the database
